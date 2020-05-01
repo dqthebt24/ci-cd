@@ -47,6 +47,18 @@ $sudo service jenkins restart
 
 - Open Jenkins web serive at: http://localhost:8080
 
+4. First login to Jenkins
+- Copy password from `/var/lib/jenkins/secrets/initialAdminPassword` to login
+- Select **“Install suggested plugins”**
+- Create new user on Jenkins web
+
+## Manage Jenkins
+
+1. Install plugins
+- Go to **“Manage Jenkins”** -&gt; **“Plugin Manage”**
+- To install a plugin, select "Available" then search the name of the plugin and click install
+
+
 ## Tricks
 - **How to exclude a file or folder from SVN monitoring in Jenkins build?**
     - In your **Job Configuration**, under **Source Code Management** section, click the **Advanced...** button.
