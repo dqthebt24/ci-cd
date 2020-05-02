@@ -59,9 +59,7 @@ $sudo service jenkins restart
 - To install a plugin, select "Available" then search the name of the plugin and click install
 
 ## Config SMTP
-
-    This session config smtp for sending email after a build. Follow these steps
-
+   This session config smtp for sending email after a build. Follow these steps.
 - Go to **“Manage Jenkins”** -&gt; **“Configure System”**.
 - Go to session **“E-mail Notification”**.
 - Configure as bellow instructions:
@@ -81,7 +79,7 @@ $sudo service jenkins restart
     - **Test e-mail recipient**: Provide an email address to receive the test
 email, ex: test@terralogic.com
     - Check inbox email from the target email address.
-
+- **Note:** User need to enable "Gmail for less secure apps". Do the steps in this [tutorial](https://hotter.io/docs/email-accounts/secure-app-gmail/) to enable.
 ## Tricks
 - **How to exclude a file or folder from SVN monitoring in Jenkins build?**
     - In your **Job Configuration**, under **Source Code Management** section, click the **Advanced...** button.
