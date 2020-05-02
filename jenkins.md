@@ -58,6 +58,29 @@ $sudo service jenkins restart
 - Go to **“Manage Jenkins”** -&gt; **“Plugin Manage”**
 - To install a plugin, select "Available" then search the name of the plugin and click install
 
+## Config SMTP
+
+    This session config smtp for sending email after a build. Follow these steps
+
+- Go to **“Manage Jenkins”** -&gt; **“Configure System”**.
+- Go to session **“E-mail Notification”**.
+- Configure as bellow instructions:
+    - **SMTP server**: stmp.gmail.com
+    - **Default user e-mail suffix**: @gmail.com
+    - Click **“Advanced…”**
+    - Check **“Use SMTP Authentication”**
+    - **Username**: &lt;your-email@gmail.com&gt;
+    - **Password**: &lt;gmail-password&gt;
+    - Check **“Use SSL”**
+    - Uncheck **“Use TSL”**
+    - **SMTP Port**: 465
+    - **Reply-To Address**: &lt;empty&gt;
+    - **Charset**: UTF-8
+- To test the configuration:
+    - Check **“Test configuration by sending test e-mail”**
+    - **Test e-mail recipient**: Provide an email address to receive the test
+email, ex: test@terralogic.com
+    - Check inbox email from the target email address.
 
 ## Tricks
 - **How to exclude a file or folder from SVN monitoring in Jenkins build?**
@@ -65,4 +88,5 @@ $sudo service jenkins restart
     - This opens up **Excluded Regions** field. Click the question **?** icon next to it for more information. Add the excluded region as:
         > /exclude-folder/.*
         
+
     - **Note**: The pattern is relative from the **root of your repo**
