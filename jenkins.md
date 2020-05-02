@@ -60,6 +60,7 @@ $sudo service jenkins restart
 
 ## Config SMTP
    This session config smtp for sending email after a build. Follow these steps.
+1. Config STMP server
 - Go to **“Manage Jenkins”** -&gt; **“Configure System”**.
 - Go to session **“E-mail Notification”**.
 - Configure as bellow instructions:
@@ -80,6 +81,19 @@ $sudo service jenkins restart
 email, ex: test@terralogic.com
     - Check inbox email from the target email address.
 - **Note:** User need to enable "Gmail for less secure apps". Do the steps in this [tutorial](https://hotter.io/docs/email-accounts/secure-app-gmail/) to enable.
+2. Configure “List email to receive email notifications”
+   This config is used in sending email to a group of emails. Do these steps to configure
+- Go to **“Manage Jenkins”** -&gt; **“Configure System”**.
+- Go to session **“Extended E-mail Notification”**
+- Configure as bellow:
+    - **SMTP**: smtp.gmail.com
+    - **Default user E-mail suffix**: @gmail.com
+    - Click **“Advanced…”** then configure as the session configure SMTP
+mail server
+    - **Default Content Type**: Plain Text (text/plain)
+    - **Default Recipients**: Add email to receive email notifications, ex:
+test1@gmail.com, test2@gmail.com, cc:test3@gmail.com
+
 ## Tricks
 - **How to exclude a file or folder from SVN monitoring in Jenkins build?**
     - In your **Job Configuration**, under **Source Code Management** section, click the **Advanced...** button.
