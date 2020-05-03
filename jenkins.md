@@ -1,6 +1,10 @@
 # Jenkins knowledge
 
-## Installation on Ubuntu
+## Table of Contents
+1. [Installation on Ubuntu](#ubuntu-installation)
+2. [Test](#test)
+
+## Installation on Ubuntu <a name="ubuntu-installation">
 There are two ways to use Jenkins are using Docker and install directly to the machine.
 The first one often use in the CI/CD process. This session will be about the second way.
 
@@ -47,7 +51,7 @@ $sudo service jenkins restart
 
 - Open Jenkins web serive at: http://localhost:8080
 
-#### 4. First login to Jenkins
+#### 4. First login to Jenkins <a name="test">
 - Copy password from `/var/lib/jenkins/secrets/initialAdminPassword` to login
 - Select **“Install suggested plugins”**
 - Create new user on Jenkins web
