@@ -4,12 +4,12 @@
 There are two ways to use Jenkins are using Docker and install directly to the machine.
 The first one often use in the CI/CD process. This session will be about the second way.
 
-1. System info
+#### 1. System info
 
-    This installation is on Ubuntu 16.04.
+   This installation is on Ubuntu 16.04.
 
-2. Install
-s- Run these commands to install
+#### 2. Install
+- Run these commands to install
 ```console
 $wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key
 | sudo apt-key add –
@@ -33,7 +33,7 @@ $sudo apt-get install Jenkins
 $sudo service jenkins status
 ```
 
-3. Open firewall port for Jenkins
+#### 3. Open firewall port for Jenkins
 - Accept firewall for port 8080 using command
 ```console
 $sudo ufw allow 8080
@@ -47,20 +47,21 @@ $sudo service jenkins restart
 
 - Open Jenkins web serive at: http://localhost:8080
 
-4. First login to Jenkins
+#### 4. First login to Jenkins
 - Copy password from `/var/lib/jenkins/secrets/initialAdminPassword` to login
 - Select **“Install suggested plugins”**
 - Create new user on Jenkins web
 
 ## Manage Jenkins
 
-1. Install plugins
+### Plugins installations
 - Go to **“Manage Jenkins”** -&gt; **“Plugin Manage”**
-- To install a plugin, select "Available" then search the name of the plugin and click install
+- To install a plugin, select **"Available"** then search the name of the plugin and click install
 
-## Config SMTP
-   This session config smtp for sending email after a build. Follow these steps.
-1. Config STMP server
+### Email sending
+   This session config smtp for sending email after a build.
+#### 1. STMP server
+To send an email (in a build configuration), we need to config STMP server. These bellow steps to config SMTP server
 - Go to **“Manage Jenkins”** -&gt; **“Configure System”**.
 - Go to session **“E-mail Notification”**.
 - Configure as bellow instructions:
@@ -81,7 +82,9 @@ $sudo service jenkins restart
 email, ex: test@terralogic.com
     - Check inbox email from the target email address.
 - **Note:** User need to enable "Gmail for less secure apps". Do the steps in this [tutorial](https://hotter.io/docs/email-accounts/secure-app-gmail/) to enable.
-2. Configure “List email to receive email notifications”
+
+#### 2. Send email to a list emails
+   
    This config is used in sending email to a group of emails. Do these steps to configure
 - Go to **“Manage Jenkins”** -&gt; **“Configure System”**.
 - Go to session **“Extended E-mail Notification”**
