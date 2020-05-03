@@ -2,7 +2,11 @@
 
 ## Table of Contents
 1. [Installation on Ubuntu](#ubuntu-installation)
-2. [Test](#test)
+1. [Manage Jenkins](#management)
+    1. [Plugins installations](#mgm-plugin-install)
+    1. [Email sending](#mgm-email-sending)
+        1. [STMP server configuration](#mgm-smtp-config)
+        1. [Config send email to a list of emails](#mgm-list-email-config)
 
 ## Installation on Ubuntu <a name="ubuntu-installation">
 There are two ways to use Jenkins are using Docker and install directly to the machine.
@@ -51,20 +55,20 @@ $sudo service jenkins restart
 
 - Open Jenkins web serive at: http://localhost:8080
 
-#### 4. First login to Jenkins <a name="test">
+#### 4. First login to Jenkins 
 - Copy password from `/var/lib/jenkins/secrets/initialAdminPassword` to login
 - Select **“Install suggested plugins”**
 - Create new user on Jenkins web
 
-## Manage Jenkins
+## Manage Jenkins <a name="management">
 
-### Plugins installations
+### Plugins installations <a name="mgm-plugin-install">
 - Go to **“Manage Jenkins”** -&gt; **“Plugin Manage”**
 - To install a plugin, select **"Available"** then search the name of the plugin and click install
 
-### Email sending
+### Email sending <a name="mgm-email-sending">
    This session config smtp for sending email after a build.
-#### 1. STMP server
+#### 1. STMP server configuration <a name="mgm-smtp-config">
 To send an email (in a build configuration), we need to config STMP server. These bellow steps to config SMTP server
 - Go to **“Manage Jenkins”** -&gt; **“Configure System”**.
 - Go to session **“E-mail Notification”**.
@@ -87,7 +91,7 @@ email, ex: test@terralogic.com
     - Check inbox email from the target email address.
 - **Note:** User need to enable "Gmail for less secure apps". Do the steps in this [tutorial](https://hotter.io/docs/email-accounts/secure-app-gmail/) to enable.
 
-#### 2. Send email to a list emails
+#### 2. Config send email to a list of emails <a name="mgm-list-email-config">
    
    This config is used in sending email to a group of emails. Do these steps to configure
 - Go to **“Manage Jenkins”** -&gt; **“Configure System”**.
