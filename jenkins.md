@@ -105,6 +105,34 @@ mail server
     - **Default Recipients**: Add email to receive email notifications, ex:
 test1@gmail.com, test2@gmail.com, cc:test3@gmail.com
 
+### Build on agents <a name="mgm-build-agent">
+   This sesson to config setting for building on agents in local network.
+#### 1. Add agent nodes <a name="mgm-build-agent-add">
+
+   Go to **“Manage Jenkins”** -&gt; **“Manage Nodes and Clouds”**
+- Select **“New Node”**
+- Enter the **“Node name”** -&gt; check **“Permanent Agent”** -&gt; click **“OK”**
+- Configure the new agent as bellow instructions:
+    - Labels: Type label to remember, ex: John Agent
+    - Remote root directory: Type the path on the agent that you will store
+the project to build, ex: `/home/john`, then when Jenkins build, it will
+write files to the folder at `/home/john`
+    - Launch method: **“Launch agents via SSH”**
+    - Host: &lt;Ip of host&gt;, ex: `10.20.12.79`
+    - Credentials: Add -&gt; Jenkins
+    - Configure Credentials:
+      > Domain: Global credentials (unrestricted)
+      > Kind: Username with password
+      > Scope: Global
+      > Username: &lt;enter_login_username_on_master_ssh_machine&gt;
+      > Password: &lt;enter_ssh_password&gt;
+    - Click **“Add”** -&gt; **“Save”**
+
+   When agents are added, Jenkins will choose one of them to build a job. We can assign an agent for a job with instructions bellows
+  
+#### 2. Assign an agent for a job
+   Go to job configuration, check **“Restrict where this project can be run”** -&gt; type the agent name. Ex: *John Agent*
+
 ## Tricks
 - **How to exclude a file or folder from SVN monitoring in Jenkins build?**
     - In your **Job Configuration**, under **Source Code Management** section, click the **Advanced...** button.
