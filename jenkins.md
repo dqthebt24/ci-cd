@@ -7,6 +7,9 @@
     1. [Email sending](#mgm-email-sending)
         1. [STMP server configuration](#mgm-smtp-config)
         1. [Config send email to a list of emails](#mgm-list-email-config)
+    1. [Build on agents](#mgm-build-agent)
+        1. [Add agent nodes](#mgm-build-agent-add)
+        1. [Assign an agent for a job](#mgm-build-agent-assign)
 
 ## Installation on Ubuntu <a name="ubuntu-installation">
 There are two ways to use Jenkins are using Docker and install directly to the machine.
@@ -110,27 +113,29 @@ test1@gmail.com, test2@gmail.com, cc:test3@gmail.com
 #### 1. Add agent nodes <a name="mgm-build-agent-add">
 
    Go to **“Manage Jenkins”** -&gt; **“Manage Nodes and Clouds”**
+
 - Select **“New Node”**
 - Enter the **“Node name”** -&gt; check **“Permanent Agent”** -&gt; click **“OK”**
 - Configure the new agent as bellow instructions:
-    - Labels: Type label to remember, ex: John Agent
-    - Remote root directory: Type the path on the agent that you will store
+    - **Labels**: Type label to remember, ex: John Agent
+    - **Remote root directory**: Type the path on the agent that you will store
 the project to build, ex: `/home/john`, then when Jenkins build, it will
 write files to the folder at `/home/john`
-    - Launch method: **“Launch agents via SSH”**
-    - Host: &lt;Ip of host&gt;, ex: `10.20.12.79`
-    - Credentials: Add -&gt; Jenkins
-    - Configure Credentials:
-      > Domain: Global credentials (unrestricted)
-      > Kind: Username with password
-      > Scope: Global
-      > Username: &lt;enter_login_username_on_master_ssh_machine&gt;
-      > Password: &lt;enter_ssh_password&gt;
-    - Click **“Add”** -&gt; **“Save”**
+    - **Launch method**: **“Launch agents via SSH”**
+    - **Host**: &lt;Ip of host&gt;, ex: `10.20.12.79`
+    - **Credentials**: Click button **Add** then select **Jenkins**
+    - Configure **Credentials**:
+        - **Domain**: Global credentials (unrestricted)
+        - **Kind**: Username with password
+        - **Scope**: Global
+        - **Username**: *&lt;enter_login_username_on_master_ssh_machine&gt;*
+        - **Password**: *&lt;enter_ssh_password&gt;*
 
-   When agents are added, Jenkins will choose one of them to build a job. We can assign an agent for a job with instructions bellows
+- Click **“Add”** -&gt; **“Save”**
+
+When agents are added, Jenkins will choose one of them to build a job. We can assign an agent for a job with instructions bellows
   
-#### 2. Assign an agent for a job
+#### 2. Assign an agent for a job <a name="mgm-build-agent-assign">
    Go to job configuration, check **“Restrict where this project can be run”** -&gt; type the agent name. Ex: *John Agent*
 
 ## Tricks
