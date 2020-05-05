@@ -10,8 +10,14 @@
     1. [Build on agents](#mgm-build-agent)
         1. [Add agent nodes](#mgm-build-agent-add)
         1. [Assign an agent for a job](#mgm-build-agent-assign)
+1. [Create and build project on Jenkins](#create-build-job)
+    1. [Create a project](#create-build-job-create)
+    1. [Configure project](#create-build-job-config)
+    1. [Upstream and Downstream project](#create-build-job-up-down-stream)
+    1. [Xvfb for running GUI](#create-build-job-xvfb)
 
 ## Installation on Ubuntu <a name="ubuntu-installation">
+
 There are two ways to use Jenkins are using Docker and install directly to the machine.
 The first one often use in the CI/CD process. This session will be about the second way.
 
@@ -137,6 +143,12 @@ When agents are added, Jenkins will choose one of them to build a job. We can as
   
 #### 2. Assign an agent for a job <a name="mgm-build-agent-assign">
    Go to job configuration, check **“Restrict where this project can be run”** -&gt; type the agent name. Ex: *John Agent*
+
+### Create and build project on Jenkins <a name="create-build-job">
+#### 1. Create a project <a name="create-build-job-create">
+#### 2. Configure project <a name="create-build-job-config">
+#### 3. Upstream and Downstream project <a name="create-build-job-up-down-stream">
+#### 4. Xvfb for running GUI <a name="create-build-job-xvfb">
 
 ## Tricks
 - **How to exclude a file or folder from SVN monitoring in Jenkins build?**
